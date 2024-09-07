@@ -81,7 +81,7 @@ const Home = () => {
   return (
     <div>
       <h1>Home Page</h1>
-      <button onClick={logout}>Logout</button> {/* Logout button */}
+      <button onClick={logout}>Logout</button>
       <div>
         <button onClick={addBook}>Add a Notebook</button>
       </div>

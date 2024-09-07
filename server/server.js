@@ -3,6 +3,8 @@ const mysql = require("mysql");
 const cors = require("cors");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+require("dotenv").config();
+
 const saltRounds = 10;
 
 const app = express();
@@ -35,7 +37,8 @@ app.post("/signup", (req, res) => {
   });
 });
 
-const secretKey = "your_secret_key"; // Store this in an env variable
+const secretKey = process.env.JWT_SECRET;
+// Store this in an env variable
 
 app.post("/checkuser", (req, res) => {
   const { email, pass } = req.body;
